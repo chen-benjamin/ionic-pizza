@@ -1,0 +1,7 @@
+{
+  "name": "ionic-pizza",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
