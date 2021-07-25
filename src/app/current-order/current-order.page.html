@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Current Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>Total Price: ${{ totalPrice }}</ion-col>
+          <ion-col>Total Quantity: {{ totalQuantity }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item *ngFor="let pizza of order; let i = index">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Topping: {{ pizza.topping }}</ion-col>
+          <ion-col>Size: {{ pizza.size }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Quantity: {{ pizza.quantity }}</ion-col>
+          <ion-col>Price: ${{ pizza. price }}</ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button size="large" (click)="deletePizza(i)">
+        <ion-icon color="danger" slot="end" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer *ngIf="order.length > 0">
+  <ion-toolbar>
+    <ion-button color="medium" expand="block" (click)="placeOrder()">Place Order</ion-button>
+  </ion-toolbar>
+</ion-footer>

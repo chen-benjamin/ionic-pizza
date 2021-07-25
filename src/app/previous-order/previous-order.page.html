@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <h2>Transactions</h2>
+    </ion-item>
+    <ion-item *ngFor="let order of orders">
+      <ion-grid>
+        <ion-row>
+          <ion-col>{{ order.date | date:'yyyy-MM-dd HH:mm:ss' }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Quantity: {{ order.quantity }}</ion-col>
+          <ion-col>Price: ${{ order. price }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

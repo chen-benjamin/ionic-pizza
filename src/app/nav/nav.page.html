@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nav Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="goCurrentOrder($event)">Check Current Order</ion-button></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="goUpdateOrder($event)">Update Current Order</ion-button></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="goPreviousOrder($event)">Previous Order</ion-button></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="goNewOrder($event)">New Order</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
